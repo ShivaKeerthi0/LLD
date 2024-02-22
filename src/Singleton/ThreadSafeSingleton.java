@@ -15,12 +15,13 @@ public class ThreadSafeSingleton {
         if(instance == null ){
 
             // synchronized keyword ensures that the thread needed to be access memory from the main memory and
-            // not from the cpu cache
+            // not from the cpu cache and it maintains a mutual exclusion on the object of "ThreadSafeSingleton.class"
+            // so that only one thread can only access this particular block of code at a time.
             synchronized (ThreadSafeSingleton.class){
 
                 // double locking is done (that is checking if the instance is null because before coming to this block
-                // there may be instance crea
-                // one thread at a time)
+                // there may be instance already created by
+                // one thread at this point of time)
 
                 if(instance == null){
                     return instance= new ThreadSafeSingleton();
