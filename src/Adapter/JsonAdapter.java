@@ -10,8 +10,7 @@ public class JsonAdapter extends  Adapter{
 
         String data = lc.giveData();
 
-        //converts data to json;
-
+        // logic to convert data to json;
 
         return "returned Json Data";
 
